@@ -15,7 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-public class Game {
+public class Main {
 	JFrame window = new JFrame();
 	Container con;
 	JPanel titleNamePanel = new JPanel();
@@ -136,9 +136,9 @@ public class Game {
     ChooseClass chooseClass = new ChooseClass();
     //how many enemy
 	public static void main(String[] args) {
-		new Game();
+		new Main();
 	}
-	public Game() {
+	public Main() {
 		//window
 		window = new JFrame();
 		window.setSize(800, 600);
