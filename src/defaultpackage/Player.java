@@ -3,10 +3,9 @@ package defaultpackage;
 public class Player {
 	private String name;
 	private int hp, mp, def, evasion, level, attack, exp;
+	private String[] specs;
 	
-	
-	
-	public Player(String name, int hp, int mp, int def, int evasion, int level, int attack, int exp) {
+	public Player(String name, int hp, int mp, int def, int evasion, int level, int attack) {
 		super();
 		this.name = name;
 		this.hp = hp;
@@ -15,7 +14,8 @@ public class Player {
 		this.evasion = evasion;
 		this.level = level;
 		this.attack = attack;
-		this.exp = exp;
+		this.exp = 0;
+		this.specs = new String[3];
 	}
 	//getters and setters
 	public String getName() {
@@ -68,10 +68,16 @@ public class Player {
 	public void setExp(int exp) {
 		this.exp = exp;
 	}
+	public String[] getSpecs() {
+		return specs;
+	}
+	public void setSpecs(String[] specs) {
+		this.specs = specs;
+	}
+	//ToString
 	@Override
 	public String toString() {
 		return "Player [name=" + name + ", hp=" + hp + ", mp=" + mp + ", def=" + def + ", evasion=" + evasion
 				+ ", level=" + level + ", attack=" + attack + ", exp=" + exp + "]";
 	}
-	
 }

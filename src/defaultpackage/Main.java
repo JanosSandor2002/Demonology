@@ -15,6 +15,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import classes.Mage;
+import classes.Thief;
+import classes.Warrior;
+
 public class Main {
 	JFrame window = new JFrame();
 	Container con;
@@ -198,9 +202,9 @@ public class Main {
 				thief = new ImageIcon(getClass().getResource("/assets/players/thief.jpg"));
 				thiefPicLabel = new JLabel(thief);
 
-				Warrior = new Player("Warrior", 250, 40, 140, 30, 1, 69, 0);
-				Mage = new Player("Mage", 155, 90, 95, 35, 1, 13, 0);
-				Thief = new Player("Thief", 190, 32, 125, 40, 1, 51, 0);
+				Warrior = new Warrior("Warrior", 280, 40, 140, 30, 1, 69);
+				Mage = new Mage("Mage", 195, 90, 95, 35, 1, 13);
+				Thief = new Thief("Thief", 220, 32, 125, 40, 1, 51);
 				
 				
 			//monsters first round
@@ -574,8 +578,9 @@ public class Main {
 	//set Things up
 	public void setPlayer(Player p) {
 		if (levelNum == 0) {	
-			player = new Player(p.getName(), p.getHp(), p.getMp(), p.getDef(), p.getEvasion(), 1, p.getAttack(), p.getExp());
-		    player2 = new Player(p.getName(), p.getHp(), p.getMp(), p.getDef(), p.getEvasion(), 1, p.getAttack(), upgradeExp);
+			player = new Warrior(p.getName(), p.getHp(), p.getMp(), p.getDef(), p.getEvasion(), 1, p.getAttack());
+		    player2 = new Warrior(p.getName(), p.getHp(), p.getMp(), p.getDef(), p.getEvasion(), 1, p.getAttack());
+		    player2.setExp(upgradeExp);
 		    System.out.println("Player set: "+ player.getName());
 		} else {
 			upgradePlayer(player.getExp());
